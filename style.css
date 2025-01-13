@@ -51,6 +51,7 @@ body {
     display: flex;
     width: fit-content;
     margin: 0 auto;
+    transform: translateX(calc(var(--white-key-width)/2));
 }
 
 .white-key {
@@ -104,23 +105,23 @@ body {
 
 /* Positioning black keys */
 .black-key[data-note="C#4"] {
-    left: calc(var(--white-key-width) - var(--black-key-width)/2);
+    left: calc(var(--white-key-width) - var(--black-key-width) / 2);
 }
 
 .black-key[data-note="D#4"] {
-    left: calc(var(--white-key-width)*2 - var(--black-key-width)/2);
+    left: calc(2*var(--white-key-width) - var(--black-key-width)/2.5);
 }
 
 .black-key[data-note="F#4"] {
-    left: calc(var(--white-key-width)*4 - var(--black-key-width)/2);
+    left: calc(4*var(--white-key-width) - var(--black-key-width) / 3);
 }
 
 .black-key[data-note="G#4"] {
-    left: calc(var(--white-key-width)*5 - var(--black-key-width)/2);
+    left: calc(5*var(--white-key-width) - var(--black-key-width) / 3.5);
 }
 
 .black-key[data-note="A#4"] {
-    left: calc(var(--white-key-width)*6 - var(--black-key-width)/2);
+    left: calc(6*var(--white-key-width) - var(--black-key-width) / 4.5);
 }
 
 @media (max-width: 600px) {
