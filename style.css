@@ -1,0 +1,138 @@
+:root {
+    --white-key-width: 60px;
+    --black-key-width: 36px;
+    --key-height: 200px;
+    --black-key-height: 120px;
+    --key-color: #f0f0f0;
+    --black-key-color: #333;
+    --hover-color: #ddd;
+    --active-color: #ccc;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.synth-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.controls select,
+.controls input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.controls label {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.keyboard {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.white-key {
+    width: var(--white-key-width);
+    height: var(--key-height);
+    background-color: var(--key-color);
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: background-color 0.1s ease;
+}
+
+.white-key:hover {
+    background-color: var(--hover-color);
+}
+
+.white-key.active {
+    background-color: var(--active-color);
+}
+
+.black-key {
+    position: absolute;
+    width: var(--black-key-width);
+    height: var(--black-key-height);
+    background-color: var(--black-key-color);
+    border-radius: 0 0 4px 4px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: background-color 0.1s ease;
+}
+
+.black-key:hover {
+    background-color: #222;
+}
+
+.black-key.active {
+    background-color: #111;
+}
+
+/* Positioning black keys */
+.black-key[data-note="C#4"] {
+    left: calc(var(--white-key-width) - var(--black-key-width)/2);
+}
+
+.black-key[data-note="D#4"] {
+    left: calc(var(--white-key-width)*2 - var(--black-key-width)/2);
+}
+
+.black-key[data-note="F#4"] {
+    left: calc(var(--white-key-width)*4 - var(--black-key-width)/2);
+}
+
+.black-key[data-note="G#4"] {
+    left: calc(var(--white-key-width)*5 - var(--black-key-width)/2);
+}
+
+.black-key[data-note="A#4"] {
+    left: calc(var(--white-key-width)*6 - var(--black-key-width)/2);
+}
+
+@media (max-width: 600px) {
+    :root {
+        --white-key-width: 40px;
+        --black-key-width: 24px;
+        --key-height: 150px;
+        --black-key-height: 90px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

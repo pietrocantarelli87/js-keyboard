@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synth Keyboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="synth-container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="waveform">Waveform:</label>
+                <select id="waveform" title="Select waveform type" aria-label="Select waveform type">
+                    <option value="sine">Sine</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5"
+                       title="Adjust volume level" aria-label="Volume control">
+            </div>
+            <div class="control-group">
+                <label for="sustain">Sustain:</label>
+                <input type="range" id="sustain" min="0.1" max="2" step="0.1" value="0.5"
+                       title="Adjust sustain duration" aria-label="Sustain control">
+            </div>
+            <div class="control-group">
+                <label for="release">Release:</label>
+                <input type="range" id="release" min="0.1" max="2" step="0.1" value="0.5"
+                       title="Adjust release duration" aria-label="Release control">
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="white-key" data-note="C4">C</div>
+            <div class="black-key" data-note="C#4">C#</div>
+            <div class="white-key" data-note="D4">D</div>
+            <div class="black-key" data-note="D#4">D#</div>
+            <div class="white-key" data-note="E4">E</div>
+            <div class="white-key" data-note="F4">F</div>
+            <div class="black-key" data-note="F#4">F#</div>
+            <div class="white-key" data-note="G4">G</div>
+            <div class="black-key" data-note="G#4">G#</div>
+            <div class="white-key" data-note="A4">A</div>
+            <div class="black-key" data-note="A#4">A#</div>
+            <div class="white-key" data-note="B4">B</div>
+            <div class="white-key" data-note="C5">C</div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
